@@ -1,10 +1,19 @@
 const router = require('express').Router();
+const ProductController = require('../controllers/products')
 
-router.get('/clientes', (req, res)=>{
-     res.send({
-          ok:"123"
-     })
-})
+
+/// VERBOS HTTP (4 TIPOS )
+
+// GET    -  OBTER DADOS     
+// POST   -  ENVIAR/RECEBER DADOS 
+// PUT    -  ATUALIZAR DADOS 
+// DELETE -  DELETAR DADOS 
+
+router.get('/produtos', ProductController.get)
+//router.post('/produtos', ProductController.post)
+//router.put('/produtos:id', ProductController.put)
+//router.delete('/produtos:id', ProductController.delete)
+
 
 
 

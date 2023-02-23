@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
-//const db = require('./database');
+const db = require('./database/db');
 const routes = require('./routes/routes');
 //const path = require('path');
 
-
+db.connect()
 
 //app.set('views', path.join(__dirname,'views'));
 
@@ -12,9 +12,10 @@ const routes = require('./routes/routes');
 app.use(express.urlencoded({extended:true}));
 
 
-//app.get('/api',routes)
 
 app.use('/api', routes)
 
 const port = process.env.PORT || 8000
 app.listen(port, console.log("Listem in port " + port));
+
+
