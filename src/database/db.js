@@ -8,9 +8,7 @@ function connect(){
      })    
      const db = mongoose.connection
      
-     db.once('open',()=>{
-          console.log('connect a database');
-     })
+
      db.on('connected', () => {
           console.log('Conexão com o MongoDB estabelecida com sucesso!');
      });

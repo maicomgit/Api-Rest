@@ -10,9 +10,9 @@ const ProductController = require('../controllers/products')
 // DELETE -  DELETAR DADOS 
 
 router.get('/produtos/:id?', ProductController.get)
-//router.post('/produtos', ProductController.post)
-//router.put('/produtos/:id', ProductController.put)
-//router.delete('/produtos/:id', ProductController.delete)
+router.post('/produtos', ProductController.post)
+router.put('/produtos/:id', ProductController.put)
+router.delete('/produtos/:id', ProductController.remove)
 
 
 
