@@ -2,11 +2,31 @@ const express = require('express');
 const app = express();
 const db = require('./database/db');
 const routes = require('./routes/routes');
-
+const cors = require('cors')
 
 //const path = require('path');
 
 db.connect()
+
+//habilita cors
+
+
+const allowedOrigins = [
+     'http://127.0.0.2:5500',
+     'http://127.0.0.2:5556'
+     ]
+
+     app.use(cors({
+     origin: function(origin, callback) {
+     let allowed = true;
+
+     if (!origin) allowed = true;
+     if (!allowedOrigins.includes(origin)) allowed = false;
+
+     callback(null, allowed)
+     }
+}))
+
 
 //app.set('views', path.join(__dirname,'views'));
 
